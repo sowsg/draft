@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <title></title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+       <script src="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></script>
+       <script src="/resources/demos/style.css"></script>
+       <style media="screen">
+           .block{
+               width: 100vw;
+               height: 100vh;
+               overflow: hidden;
+               position: relative;
+           }
+           #draggable{
+               position: relative;
+               left: 550px;
+               top: 400px;
+           }
+           .ui-widget-content{
+               position: relative;
+               display: block;
+               z-index: 8;
+           }
+           .coffee{
+               position: inherit;
+               width: 110px;
+               height: 110px;
+               background: #EC673A;
+               border-radius: 50%;
+               top: -230px;
+               left: 27px;
+           }
+           #droppable{
+               background: white;
+               width: 800px;
+               height: 600px;
+               position: absolute;
+               transform: rotate(-40deg);
+               top: 560px;
+               left: 800px;
+           }
+           .counter{
+               position: absolute;
+                top: 100px;
+               left: 500px;
+           }
+           .outside{
+               position: inherit;
+               width: 300px;
+               height: 45px;
+               border: 4px solid #21886D;
+               border-radius: 30px;
+           }
+           .inside{
+               position: inherit;
+               width: 305px;
+               height: 50px;
+               background: #EC673A;
+               border-radius: 30px;
+           }
+           .button_play{
+             position: absolute;
+             left: 500px;
+               top: 300px;
+           }
+       </style>
+       
+       <script>
+           $(document).ready(function(){
+               
+           })
+       </script>
+       
+       <body bgcolor=#1D1E23>
+       <div class="block">
+ <div id="draggable">
+     <img class="ui-widget-content" src="css/images/Vector%2091.svg">
+     <div class="coffee"></div>
+</div>
+<div id="droppable" class="ui-widget-header">
+</div>
+      </div>
+      
+      <div class="counter">
+      <div class="inside"></div>
+      <div class="outside"></div>
+      </div>
+      
+<!--      <img class="button_play" src="css/images/botton.svg">-->
+       </body>
+    </head>
+</html>
