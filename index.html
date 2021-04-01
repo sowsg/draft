@@ -4,10 +4,10 @@
        <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1">
        <title></title>
-<!--       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
-<!--       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
-       <script src="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></script>
-       <script src="/resources/demos/style.css"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!--       <script src="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></script>-->
+<!--       <script src="/resources/demos/style.css"></script>-->
        <style media="screen">
            .block{
                width: 100vw;
@@ -80,6 +80,7 @@
           .find( "" )
             .toggleClass("counter", add);
           
+          
           function move() {
   let elem = document.getElementById("inside");   
   let width = 0;
@@ -100,7 +101,7 @@
        
        <body bgcolor=#1D1E23>
        <div class="block">
- <div id="draggable">
+ <div draggable="move()" id="draggable">
      <img class="ui-widget-content" src="css/images/Vector%2091.svg">
      <div class="coffee"></div>
 </div>
