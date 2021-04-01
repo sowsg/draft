@@ -4,8 +4,8 @@
        <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1">
        <title></title>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!--       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
        <script src="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></script>
        <script src="/resources/demos/style.css"></script>
        <style media="screen">
@@ -48,14 +48,14 @@
                 top: 100px;
                left: 500px;
            }
-           .outside{
+           #outside{
                position: inherit;
                width: 300px;
                height: 45px;
                border: 4px solid #21886D;
                border-radius: 30px;
            }
-           .inside{
+           #inside{
                position: inherit;
                width: 305px;
                height: 50px;
@@ -71,9 +71,32 @@
        
        <script>
            $(document).ready(function(){
-               
-           })
-       </script>
+              $( function() {
+    $( "#draggable" ).draggable();
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "" )
+            .toggleClass("counter", add);
+          
+          function move() {
+  let elem = document.getElementById("inside");   
+  let width = 0;
+  let id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+      }
+    });
+  } );
+  </script>   
        
        <body bgcolor=#1D1E23>
        <div class="block">
@@ -86,8 +109,8 @@
       </div>
       
       <div class="counter">
-      <div class="inside"></div>
-      <div class="outside"></div>
+      <div id="inside"></div>
+      <div id="outside"></div>
       </div>
       
 <!--      <img class="button_play" src="css/images/botton.svg">-->
