@@ -9,16 +9,19 @@
 <!--       <script src="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></script>-->
 <!--       <script src="/resources/demos/style.css"></script>-->
        <style media="screen">
+           
            .block{
                width: 100vw;
                height: 100vh;
                overflow: hidden;
                position: relative;
+               
            }
            #draggable{
                position: relative;
                left: 550px;
                top: 400px;
+               width: 100px;
            }
            .ui-widget-content{
                position: relative;
@@ -95,8 +98,40 @@
       }
     });
   } )});
-  </script>   
-       
+  </script>  
+     <script> 
+      $(document).ready(function(){
+  $( function() {
+      $( "#draggable, #draggable-nonvalid" ).draggable();
+      $( "#droppable" ).droppable({
+        accept: "#draggable",
+        classes: {
+          "ui-droppable-active": "ui-state-active",
+          "ui-droppable-hover": "ui-state-hover"
+        },
+        drop: function( event, ui ) {
+          $( this )
+            .toggleClass( "ui-state-highlight" )
+            .find( "p" )
+              .html( "Dropped!" );
+        }
+      });
+    } );
+    let counter = 0;
+    setInterval(function () {
+      if (counter >= 0 && $("#droppable").hasClass("ui-state-highlight")) {
+        counter++;
+      } else if (counter >= 1) {
+        counter--;
+
+      }
+      $("#outside").html(counter);
+
+    },200);
+
+  } );
+  </script>
+
        <body bgcolor=#1D1E23>
        <div class="block">
  <div draggable="move()" id="draggable">
@@ -104,14 +139,15 @@
      <div class="coffee"></div>
 </div>
 <div id="droppable" class="ui-widget-header">
+  <p></p>
 </div>
+
       </div>
-      
+
       <div class="counter">
       <div id="inside"></div>
       <div id="outside"></div>
       </div>
-      
 <!--      <img class="button_play" src="css/images/botton.svg">-->
        </body>
     </head>
